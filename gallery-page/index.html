@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery | Americas Cup 2024</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <img src="../assets/dhl-logo.png" alt="DHL Logo" />
+        </div>
+        <nav class="nav">
+          <a href="../home-page/index.html">HOME</a>
+          <a href="#info">INFO</a>
+          <a href="#gallery">GALLERY</a>
+          <a href="#challenges" class="active">CHALLENGES</a>
+          <a href="#faqs">FAQS</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <img src="../assets/icons/click-icon.svg" alt="Icon" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="../assets/icons/facebook.svg" alt="Facebook" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="../assets/icons/instagram.svg" alt="Instagram" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-section"></section>
+
+    <!-- Category tabs -->
+    <section class="category-tabs">
+      <div class="category-tabs-container">
+        <!-- Main category tabs with icons -->
+        <div class="tabs-row">
+          <button class="tab active" data-category="all">
+            <div class="tab-icon">
+              <img src="../assets/illustrations/gallery/all.svg" alt="All" />
+            </div>
+            <span class="tab-label">ALL</span>
+          </button>
+          <button class="tab" data-category="football">
+            <div class="tab-icon">
+              <img
+                src="../assets/illustrations/gallery/football.svg"
+                alt="Football"
+              />
+            </div>
+            <span class="tab-label">FOOTBALL</span>
+          </button>
+          <button class="tab" data-category="cheerleading">
+            <div class="tab-icon">
+              <img
+                src="../assets/illustrations/gallery/cheerleading.svg"
+                alt="Cheerleading"
+              />
+            </div>
+            <span class="tab-label">CHEERLEADING</span>
+          </button>
+          <button class="tab" data-category="events">
+            <div class="tab-icon">
+              <img
+                src="../assets/illustrations/gallery/events.svg"
+                alt="Events"
+              />
+            </div>
+            <span class="tab-label">EVENTS</span>
+          </button>
+          <button class="tab" data-category="general">
+            <div class="tab-icon">
+              <img
+                src="../assets/illustrations/gallery/general.svg"
+                alt="General"
+              />
+            </div>
+            <span class="tab-label">GENERAL</span>
+          </button>
+        </div>
+
+        <!-- Year selection buttons -->
+        <div class="years-row">
+          <button class="year-btn active" data-year="2018">2018</button>
+          <button class="year-btn" data-year="2019">2019</button>
+          <button class="year-btn" data-year="2020">2020</button>
+          <button class="year-btn" data-year="2021">2021</button>
+          <button class="year-btn" data-year="2022">2022</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery grid -->
+    <main class="gallery-main">
+      <div class="grid">
+        <!-- 15 placeholders -->
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+      </div>
+      <div class="load-more">
+        <button class="load-more-btn">Load More</button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <!-- Upper Footer Section -->
+      <div class="footer-upper">
+        <div class="footer-upper-content">
+          <div class="footer-event-info">
+            <p class="footer-event-text">
+              2 - 5 MAY 2024 <span style="color: white">ORLANDO, FLORIDA</span>
+            </p>
+          </div>
+          <div class="footer-social-section">
+            <div class="footer-social-icons">
+              <a href="#" class="footer-social-icon">
+                <img src="../assets/icons/click-icon.svg" alt="Click" />
+              </a>
+              <a href="#" class="footer-social-icon">
+                <img src="../assets/icons/facebook.svg" alt="Facebook" />
+              </a>
+              <a href="#" class="footer-social-icon">
+                <img src="../assets/icons/instagram.svg" alt="Instagram" />
+              </a>
+            </div>
+            <div class="footer-conversation">
+              <p class="conversation-text">JOIN THE CONVERSATION</p>
+              <p class="conversation-hashtag">#DHLAMERICASCUP</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lower Footer Section -->
+      <div class="footer-lower">
+        <div class="footer-lower-content">
+          <div class="footer-copyright">
+            <p>Copyright © 2024 DHL Express. All Rights Reserved.</p>
+          </div>
+          <div class="footer-navigation">
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Tab functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        // Category tabs
+        const categoryTabs = document.querySelectorAll(".tab");
+        const yearButtons = document.querySelectorAll(".year-btn");
+
+        categoryTabs.forEach((tab) => {
+          tab.addEventListener("click", function () {
+            // Remove active class from all category tabs
+            categoryTabs.forEach((t) => t.classList.remove("active"));
+            // Add active class to clicked tab
+            this.classList.add("active");
+
+            // Here you would typically filter the gallery content
+            const category = this.getAttribute("data-category");
+            console.log("Selected category:", category);
+          });
+        });
+
+        yearButtons.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            // Remove active class from all year buttons
+            yearButtons.forEach((b) => b.classList.remove("active"));
+            // Add active class to clicked button
+            this.classList.add("active");
+
+            // Here you would typically filter by year
+            const year = this.getAttribute("data-year");
+            console.log("Selected year:", year);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
