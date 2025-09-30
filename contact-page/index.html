@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Americas Cup 2024</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header (reused structure) -->
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <img src="../home-page/assets/dhl-logo.png" alt="DHL Logo" />
+        </div>
+        <nav class="nav">
+          <a href="../home-page/index.html#home">HOME</a>
+          <a href="../home-page/index.html#faq">FAQ</a>
+          <a href="../home-page/index.html#gallery">GALLERY</a>
+          <a href="../challenges-page/index.html">CHALLENGES</a>
+          <a href="../home-page/index.html#post">POST</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
+        <div class="social-icons">
+          <a href="#" class="social-icon">
+            <img src="../assets/icons/click-icon.svg" alt="Icon" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="../assets/icons/facebook.svg" alt="Facebook" />
+          </a>
+          <a href="#" class="social-icon">
+            <img src="../assets/icons/instagram.svg" alt="Instagram" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-section"></section>
+    <!-- Dark Email Strip -->
+    <section class="email-strip">
+      <p>
+        Any event-related queries should be sent to: <br />
+        <a href="mailto:info@dhlamericascup.com">info@dhlamericascup.com</a>
+      </p>
+      <span class="email-strip-sub" style="font-size: 17px;"
+        >Emails will be responded to within two business days.</span
+      >
+    </section>
+
+    <!-- Contact Form Block -->
+    <main class="contact-main" id="contact">
+      <form class="contact-form" onsubmit="event.preventDefault();">
+        <div class="form-row">
+          <select aria-label="Subject of Enquiry">
+            <option selected>Subject of Enquiry</option>
+            <option>General information</option>
+            <option>Registration</option>
+            <option>Visa requirements</option>
+            <option>Volunteers / Info points</option>
+            <option>Football tournament</option>
+          </select>
+        </div>
+        <div class="form-row two-cols">
+          <input
+            type="text"
+            placeholder="First name:"
+            aria-label="First name"
+          />
+          <input type="text" placeholder="Last name:" aria-label="Last name" />
+        </div>
+        <div class="form-row">
+          <input
+            type="email"
+            placeholder="Email address:"
+            aria-label="Email address"
+          />
+        </div>
+        <div class="form-row">
+          <textarea
+            placeholder="Message:"
+            rows="6"
+            aria-label="Message"
+          ></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">Submit</button>
+        </div>
+      </form>
+
+      <section class="reference-contacts">
+        <h3>As reference, other contacts include:</h3>
+        <ul class="contact-list">
+          <li><strong>Shonagh Baigent</strong> – Project Lead</li>
+          <li>
+            Americas Cup 2024 Team – General Information <br>
+            <a href="mailto:info@dhlamericascup.com">info@dhlamericascup.com</a>
+          </li>
+          <li>
+            Americas Cup 2024 Team – Registration <br>
+            <a href="mailto:registration@dhlamericascup.com"
+              >registration@dhlamericascup.com</a
+            >
+          </li>
+          <li>
+            Americas Cup 2024 Team – Visa requirements <br>
+            <a href="mailto:visa@dhlamericascup.com">visa@dhlamericascup.com</a>
+          </li>
+          <li>Chris Gillet – Volunteers / Info Points</li>
+          <li>Graeme Aitken – Football Tournament</li>
+        </ul>
+
+        <div class="sponsors">
+          <p>Sponsors:</p>
+          <div class="sponsor-grid">
+            <div class="sponsor-item">
+              <strong>John Pearson</strong>
+              <span>Global CEO</span>
+            </div>
+            <div class="sponsor-item">
+              <strong>Regine Buettner</strong>
+              <span>EVP HR Global & Europe</span>
+            </div>
+            <div class="sponsor-item">
+              <strong>Mike Parra</strong>
+              <span>CEO, Americas</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (reused structure) -->
+    <footer class="footer">
+      <div class="footer-upper">
+        <div class="footer-upper-content">
+          <div class="footer-event-info">
+            <p class="footer-event-text">
+              2 - 5 MAY 2024 <span style="color: white">ORLANDO, FLORIDA</span>
+            </p>
+          </div>
+          <div class="footer-social-section">
+            <div class="footer-social-icons">
+              <a href="#" class="footer-social-icon">
+                <img src="../assets/icons/click-icon.svg" alt="Click" />
+              </a>
+              <a href="#" class="footer-social-icon">
+                <img src="../assets/icons/facebook.svg" alt="Facebook" />
+              </a>
+              <a href="#" class="footer-social-icon">
+                <img src="../assets/icons/instagram.svg" alt="Instagram" />
+              </a>
+            </div>
+            <div class="footer-conversation">
+              <p class="conversation-text">JOIN THE CONVERSATION</p>
+              <p class="conversation-hashtag">#DHLAMERICASCUP</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-lower">
+        <div class="footer-lower-content">
+          <div class="footer-copyright">
+            <p>Copyright © 2024 DHL Express. All Rights Reserved.</p>
+          </div>
+          <div class="footer-navigation">
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
