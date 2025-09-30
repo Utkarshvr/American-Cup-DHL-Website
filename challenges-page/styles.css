@@ -121,33 +121,22 @@ body {
 }
 
 .cta-button {
-  padding: 20px 40px;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  font-weight: 700;
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 900;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-transform: none;
   min-width: 200px;
 }
 
-.cta-button.express-yourself {
-  background-color: #d40511;
-  color: white;
-}
+.cta-button.express-yourself { background-color: #d40511; color: #ffcc00; border: 3px solid #d40511; }
 
 .cta-button.in-the-frame,
-.cta-button.superfan {
-  background-color: #ffcc00;
-  color: #2d2d2d;
-  border: 3px solid #d40511;
-}
+.cta-button.superfan { background-color: transparent; color: #d40511; border: 3px solid #d40511; }
 
-.cta-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
+.cta-button:hover { filter: brightness(0.98); }
 
 .scroll-indicator {
   position: absolute;
@@ -290,7 +279,7 @@ body {
 
 .load-more-btn {
   background-color: #ffcc00;
-  color: #2d2d2d;
+  color: #d40511;
   border: 3px solid #d40511;
   padding: 15px 40px;
   border-radius: 8px;
@@ -535,4 +524,43 @@ a:focus,
 button:focus {
   outline: 2px solid #ffcc00;
   outline-offset: 2px;
+}
+
+/* =============================
+   Talent cards UI tweaks to match design
+   ============================= */
+.talent-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 10px;
+}
+.talent-item {
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  transition: none;
+}
+.talent-item:hover { transform: none; box-shadow: none; }
+.talent-placeholder {
+  height: 220px;
+  background: #ffffff;
+  display: block;
+}
+.play-icon { display: none; }
+.talent-info { padding: 10px 0 0; text-align: left; }
+.artist-name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #d40511;
+  margin: 10px 0 6px;
+  text-transform: uppercase;
+}
+.talent-duration { font-size: 0.95rem; color: #4a4a4a; font-weight: 400; }
+
+@media (max-width: 900px) {
+  .talent-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .talent-grid { grid-template-columns: 1fr; }
 }
