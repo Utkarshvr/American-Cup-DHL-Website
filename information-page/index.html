@@ -6,7 +6,7 @@
     <title>Americas Cup 2024 | Information | DHL</title>
     <link rel="stylesheet" href="styles.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -18,13 +18,12 @@
           <img src="./assets/dhl-logo.png" alt="DHL Logo" />
         </div>
         <nav class="nav">
-          <a href="#home">HOME</a>
-          <a href="#info" class="active">INFO</a>
-          <a href="#faq">FAQ</a>
-          <a href="#gallery">GALLERY</a>
-          <a href="#challenges">CHALLENGES</a>
-          <a href="#post">POST</a>
-          <a href="#contact">CONTACT</a>
+          <a href="../home-page/index.html">HOME</a>
+          <a href="index.html" class="active">INFO</a>
+          <a href="../gallery-page/index.html">GALLERY</a>
+          <a href="../challenges-page/index.html">CHALLENGES</a>
+          <a href="../faqs-page/index.html">FAQS</a>
+          <a href="../contact-page/index.html">CONTACT</a>
         </nav>
         <div class="social-icons">
           <a href="#" class="social-icon">
@@ -45,67 +44,69 @@
       <div class="hero-content"></div>
     </section>
 
-    <!-- Navigation Icons Strip -->
-    <section class="nav-icons-strip">
-      <div class="nav-icons-container">
-        <div class="nav-icon-item">
-          <div class="nav-icon">
-            <img
-              src="../assets/icons/information-tabs/Vector.svg"
-              alt="Program"
-            />
-          </div>
-          <span class="nav-icon-label">PROGRAM</span>
-        </div>
-        <div class="nav-icon-item">
-          <div class="nav-icon">
-            <img
-              src="../assets/icons/information-tabs/Vector-1.svg"
-              alt="Teams"
-            />
-          </div>
-          <span class="nav-icon-label">TEAMS</span>
-        </div>
-        <div class="nav-icon-item">
-          <div class="nav-icon">
-            <img
-              src="../assets/icons/information-tabs/Vector-2.svg"
-              alt="Rules"
-            />
-          </div>
-          <span class="nav-icon-label">RULES</span>
-        </div>
-        <div class="nav-icon-item">
-          <div class="nav-icon">
-            <img
-              src="../assets/icons/information-tabs/Vector-3.svg"
-              alt="Venue"
-            />
-          </div>
-          <span class="nav-icon-label">VENUE</span>
-        </div>
-        <div class="nav-icon-item">
-          <div class="nav-icon">
-            <img
-              src="../assets/icons/information-tabs/Vector-4.svg"
-              alt="Transport"
-            />
-          </div>
-          <span class="nav-icon-label">TRANSPORT</span>
-        </div>
-        <div class="nav-icon-item">
-          <div class="nav-icon">
-            <img
-              src="../assets/icons/information-tabs/Vector-5.svg"
-              alt="Catering"
-            />
-          </div>
-          <span class="nav-icon-label">CATERING</span>
+    <!-- Category tabs -->
+    <section class="category-tabs">
+      <div class="category-tabs-container">
+        <!-- Main category tabs with icons -->
+        <div class="tabs-row">
+          <button class="tab" data-category="all">
+            <div class="tab-icon">
+              <img
+                src="../assets/icons/information-tabs/program.svg"
+                alt="All"
+              />
+            </div>
+            <span class="tab-label">Program</span>
+          </button>
+          <button class="tab" data-category="football">
+            <div class="tab-icon">
+              <img
+                src="../assets/icons/information-tabs/teams.svg"
+                alt="Football"
+              />
+            </div>
+            <span class="tab-label">Teams</span>
+          </button>
+          <button class="tab" data-category="cheerleading">
+            <div class="tab-icon">
+              <img
+                src="../assets/icons/information-tabs/rules.svg"
+                alt="Cheerleading"
+              />
+            </div>
+            <span class="tab-label">Rules</span>
+          </button>
+          <button class="tab" data-category="events">
+            <div class="tab-icon">
+              <img
+                src="../assets/icons/information-tabs/venue.svg"
+                alt="Events"
+              />
+            </div>
+            <span class="tab-label">Venue</span>
+          </button>
+          <button class="tab" data-category="general">
+            <div class="tab-icon">
+              <img
+                src="../assets/icons/information-tabs/transport.svg"
+                alt="General"
+              />
+            </div>
+            <span class="tab-label">Transport</span>
+          </button>
+          <button class="tab" data-category="general">
+            <div class="tab-icon">
+              <img
+                src="../assets/icons/information-tabs/catering.svg"
+                alt="General"
+              />
+            </div>
+            <span class="tab-label">Catering</span>
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Check Out The Program Section -->
     <section class="program-section">
       <div class="container">
         <h2 class="section-title">CHECK OUT THE PROGRAM</h2>
@@ -119,7 +120,10 @@
           <div class="program-day">
             <div class="day-header">
               <div class="day-icon">
-                <span class="day-number">1</span>
+                <img
+                  src="../assets/illustrations/information/calendar-dates/day-01.svg"
+                  alt="Day 1"
+                />
               </div>
               <div class="day-info">
                 <h3 class="day-title">THURSDAY 2 MAY</h3>
@@ -145,7 +149,10 @@
           <div class="program-day">
             <div class="day-header">
               <div class="day-icon">
-                <span class="day-number">2</span>
+                <img
+                  src="../assets/illustrations/information/calendar-dates/day-02.svg"
+                  alt="Day 2"
+                />
               </div>
               <div class="day-info">
                 <h3 class="day-title">FRIDAY 3 MAY</h3>
@@ -177,7 +184,10 @@
           <div class="program-day">
             <div class="day-header">
               <div class="day-icon">
-                <span class="day-number">3</span>
+                <img
+                  src="../assets/illustrations/information/calendar-dates/day-03.svg"
+                  alt="Day 3"
+                />
               </div>
               <div class="day-info">
                 <h3 class="day-title">SATURDAY 4 MAY</h3>
@@ -209,7 +219,10 @@
           <div class="program-day">
             <div class="day-header">
               <div class="day-icon">
-                <span class="day-number">4</span>
+                <img
+                  src="../assets/illustrations/information/calendar-dates/day-04.svg"
+                  alt="Day 4"
+                />
               </div>
               <div class="day-info">
                 <h3 class="day-title">SUNDAY 5 MAY</h3>
@@ -290,12 +303,7 @@
         <p class="rules-subtitle">A few points to consider</p>
         <div class="rules-grid">
           <div class="rule-item">
-            <div class="rule-icon">
-              <img
-                src="../assets/icons/information-tabs/Vector-2.svg"
-                alt="Download"
-              />
-            </div>
+            <img src="../assets/icons/download-icon.svg" alt="Download" />
             <h3 class="rule-title">GENERAL RULES</h3>
             <p class="rule-description">
               Please download the general rules
@@ -303,12 +311,7 @@
             </p>
           </div>
           <div class="rule-item">
-            <div class="rule-icon">
-              <img
-                src="../assets/icons/information-tabs/Vector-2.svg"
-                alt="Download"
-              />
-            </div>
+            <img src="../assets/icons/download-icon.svg" alt="Download" />
             <h3 class="rule-title">FOOTBALL RULES</h3>
             <p class="rule-description">
               Please download the rules of football tournament
@@ -316,12 +319,7 @@
             </p>
           </div>
           <div class="rule-item">
-            <div class="rule-icon">
-              <img
-                src="../assets/icons/information-tabs/Vector-2.svg"
-                alt="Download"
-              />
-            </div>
+            <img src="../assets/icons/download-icon.svg" alt="Download" />
             <h3 class="rule-title">CHEERLEADING RULES</h3>
             <p class="rule-description">
               Please download the list of cheerleading rules
@@ -329,12 +327,7 @@
             </p>
           </div>
           <div class="rule-item">
-            <div class="rule-icon">
-              <img
-                src="../assets/icons/information-tabs/Vector-2.svg"
-                alt="Download"
-              />
-            </div>
+            <img src="../assets/icons/download-icon.svg" alt="Download" />
             <h3 class="rule-title">SOCIAL MEDIA RULES</h3>
             <p class="rule-description">
               Please download the social media rules
@@ -350,57 +343,77 @@
       <div class="container">
         <h2 class="section-title">THE VENUE</h2>
 
+        <!-- Accommodation - Image Left, Text Right -->
         <div class="venue-subsection">
-          <h3 class="subsection-title">ACCOMMODATION</h3>
-          <p class="subsection-description">
-            Your home for Americas Cup 2024 will be:
-          </p>
-          <p class="subsection-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-          <img
-            src="../assets/images/information/venue-section/accomodation.png"
-            alt="Accommodation"
-            class="subsection-image"
-          />
+          <div class="venue-content">
+            <div class="venue-image">
+              <img
+                src="../assets/images/information/venue-section/accomodation.png"
+                alt="Accommodation"
+              />
+            </div>
+            <div class="venue-text">
+              <h3 class="subsection-title">ACCOMMODATION</h3>
+              <p class="subsection-description">
+                Your home for Americas Cup 2024 will be:
+              </p>
+              <p class="subsection-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="venue-subsection">
-          <h3 class="subsection-title">FACILITIES</h3>
-          <p class="subsection-description">
-            The Facilities at xxxxxxxx include:
-          </p>
-          <p class="subsection-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-          <img
-            src="../assets/images/information/venue-section/facilities.png"
-            alt="Facilities"
-            class="subsection-image"
-          />
+        <!-- Facilities - Text Left, Image Right -->
+        <div class="venue-subsection reverse">
+          <div class="venue-content">
+            <div class="venue-text">
+              <h3 class="subsection-title" style="text-align: right">
+                FACILITIES
+              </h3>
+              <p class="subsection-description" style="text-align: right">
+                The Facilities at xxxx xxxx include:
+              </p>
+              <p class="subsection-text" style="text-align: right">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+            <div class="venue-image">
+              <img
+                src="../assets/images/information/venue-section/facilities.png"
+                alt="Facilities"
+              />
+            </div>
+          </div>
         </div>
 
+        <!-- Sports Fields - Image Left, Text Right -->
         <div class="venue-subsection">
-          <h3 class="subsection-title">SPORTS FIELDS</h3>
-          <p class="subsection-text">
-            Both the football tournament and cheerleading competition will be
-            held at North East Regional Park. A shuttle bus will be available to
-            transport teams to and from both of the hotels. Please note there
-            will be free water at the Sports Fields and food available in the
-            DHL Village which you can purchase using the tokens provided to you
-            by you Country Coach.
-          </p>
-          <img
-            src="../assets/images/information/venue-section/sportsfields.png"
-            alt="Sports Fields"
-            class="subsection-image"
-          />
+          <div class="venue-content">
+            <div class="venue-image">
+              <img
+                src="../assets/images/information/venue-section/sportsfields.png"
+                alt="Sports Fields"
+              />
+            </div>
+            <div class="venue-text">
+              <h3 class="subsection-title">SPORTS FIELDS</h3>
+              <p class="subsection-text">
+                Both the football tournament and cheerleading competition will
+                be held at North East Regional Park. A shuttle bus will be
+                available to transport teams to and from both of the hotels.
+                Please note there will be free water at the Sports Fields and
+                food available in the DHL Village which you can purchase using
+                the tokens provided to you by you Country Coach.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -408,69 +421,93 @@
     <!-- Transport Section -->
     <section class="transport-section">
       <div class="container">
-        <div class="transport-map">
-          <img
-            src="../assets/images/information/map.png"
-            alt="Transport Map"
-            class="map-image"
-          />
-        </div>
-
-        <div class="transport-options">
-          <div class="transport-option">
-            <div class="transport-icon">
-              <img src="../assets/icons/information/air.svg" alt="Air" />
-            </div>
-            <div class="transport-content">
+        <div class="transport-layout">
+          <!-- Air Option - Full Width -->
+          <div class="air-option">
+            <div class="air-left">
+              <div class="transport-icon">
+                <img
+                  src="../assets/illustrations/information/air.svg"
+                  alt="Air"
+                />
+              </div>
               <h3 class="transport-title">BY AIR</h3>
+            </div>
+            <div class="air-right">
               <p class="transport-description">
                 The venue is easy to get to from a number of airports in
-                Florida. Highly recommended are:
+                Florida.<br />
+                Highly recommended are:
               </p>
-              <ul class="airport-list">
-                <li class="airport-item">
-                  <span class="airport-name"
-                    >Orlando International Airport (airport code MCO) HIGHLY
-                    RECOMMENDED</span
-                  >
+              <div class="airport-info">
+                <div class="airport-item">
+                  <div class="airport-details">
+                    <span class="airport-name"
+                      >Orlando International Airport</span
+                    >
+                    <span class="airport-code">(airport code MCO)</span>
+                    <span class="highly-recommended">HIGHLY RECOMMENDED</span>
+                  </div>
                   <span class="airport-time">20 minutes transfer time</span>
-                </li>
-                <li class="airport-item">
-                  <span class="airport-name">Sanford Airport (SFB)</span>
+                </div>
+
+                <div class="airport-item">
+                  <div class="airport-details">
+                    <span class="airport-name">Sanford Airport (SFB)</span>
+                  </div>
                   <span class="airport-time">1 hour transfer time</span>
-                </li>
-                <li class="airport-item">
-                  <span class="airport-name">Tampa Airport (TPA)</span>
+                </div>
+
+                <div class="airport-item">
+                  <div class="airport-details">
+                    <span class="airport-name">Tampa Airport (TPA)</span>
+                  </div>
                   <span class="airport-time"
                     >1 hour 40 minutes transfer time</span
                   >
-                </li>
-              </ul>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="transport-option">
-            <div class="transport-icon">
-              <img src="../assets/icons/information/bus.svg" alt="Bus" />
+          <!-- Bus and Car Options - Stacked on Right -->
+          <div class="other-options">
+            <!-- By Bus Option -->
+            <div class="transport-option">
+              <div class="transport-left">
+                <div class="transport-icon">
+                  <img
+                    src="../assets/illustrations/information/bus.svg"
+                    alt="Bus"
+                  />
+                </div>
+                <h3 class="transport-title">BY BUS</h3>
+              </div>
+              <div class="transport-right">
+                <p class="transport-description">
+                  If arriving by a group coach, please make your way to the
+                </p>
+              </div>
             </div>
-            <div class="transport-content">
-              <h3 class="transport-title">BY BUS</h3>
-              <p class="transport-description">
-                If arriving by a group coach, please make your way to the
-              </p>
-            </div>
-          </div>
 
-          <div class="transport-option">
-            <div class="transport-icon">
-              <img src="../assets/icons/information/car.svg" alt="Car" />
-            </div>
-            <div class="transport-content">
-              <h3 class="transport-title">BY CAR</h3>
-              <p class="transport-description">
-                For some of you, it will be possible to drive to the venue in
-                your own car or coach. Parking is available at the
-              </p>
+            <!-- By Car Option -->
+            <div class="transport-option">
+              <div class="transport-left">
+                <div class="transport-icon">
+                  <img
+                    src="../assets/illustrations/information/car.svg"
+                    alt="Car"
+                  />
+                </div>
+                <h3 class="transport-title">BY CAR</h3>
+              </div>
+              <div class="transport-right">
+                <p class="transport-description">
+                  For some of you, it will be possible to drive to the venue in
+                  your own car or coach.
+                </p>
+                <p class="transport-description">Parking is available at the</p>
+              </div>
             </div>
           </div>
         </div>
@@ -480,31 +517,28 @@
     <!-- Your Catering Options Section -->
     <section class="catering-section">
       <div class="container">
-        <h2 class="section-title">YOUR CATERING OPTIONS</h2>
+        <h2 class="catering-title">YOUR CATERING OPTIONS</h2>
         <p class="catering-description">
           Dinner will be provided for the duration of the event, on Thursday,
           Friday and Saturday.
         </p>
 
         <div class="catering-schedule">
-          <div class="catering-day">
-            <h3 class="catering-day-title">THURSDAY</h3>
-            <p class="catering-day-desc">
+          <div class="catering-block">
+            <span class="catering-heading">THURSDAY</span>
+            <p class="catering-detail">
               You are responsible for your own lunch on Thursday so please make
               sure if you are arriving early you make appropriate arrangements
             </p>
           </div>
-
-          <div class="catering-day">
-            <h3 class="catering-day-title">FRIDAY & SATURDAY</h3>
-            <ul class="catering-list">
-              <li>Breakfast - will be included in your accommodation.</li>
-              <li>
-                Lunch - a carefully selected variety of food will be available
-                for purchase at the Sports Field.
-              </li>
-              <li>Dinner - will be arranged for all teams to attend</li>
-            </ul>
+          <div class="catering-block">
+            <span class="catering-heading">FRIDAY & SATURDAY</span>
+            <p class="catering-detail">
+              <b>Breakfast</b> - will be included in your accommodation.<br />
+              <b>Lunch</b> - a carefully selected variety of food will be
+              available for purchase at the Sports Field.<br />
+              <b>Dinner</b> - will be arranged for all teams to attend
+            </p>
           </div>
         </div>
       </div>

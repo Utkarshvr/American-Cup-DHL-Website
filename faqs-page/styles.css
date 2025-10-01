@@ -4,7 +4,7 @@
 }
 body {
   margin: 0;
-  font-family: "Roboto", Arial, sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #2d2d2d;
 }
 a {
@@ -42,6 +42,12 @@ a {
   color: #fff;
   font-weight: 400;
   font-size: 14px;
+}
+
+.nav a.active {
+  color: #ffcc00;
+  font-weight: bold;
+  text-decoration: none;
 }
 .social-icons {
   display: flex;
