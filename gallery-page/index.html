@@ -80,6 +80,10 @@
 
     <!-- Gallery grid -->
     <main class="gallery-main">
+      <!-- Selection Display -->
+      <div class="selection-display">
+        <h2 id="selection-text">All-2018</h2>
+      </div>
       <div class="grid">
         <!-- 15 placeholders -->
         <div class="card"></div>
@@ -112,6 +116,18 @@
         // Category tabs
         const categoryTabs = document.querySelectorAll(".tab");
         const yearButtons = document.querySelectorAll(".year-btn");
+        const selectionText = document.getElementById("selection-text");
+
+        // Function to update display text
+        function updateSelectionDisplay() {
+          const activeCategory = document.querySelector(".tab.active").getAttribute("data-category");
+          const activeYear = document.querySelector(".year-btn.active").getAttribute("data-year");
+          
+          // Capitalize first letter of category
+          const categoryDisplay = activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1);
+          
+          selectionText.textContent = `${categoryDisplay}-${activeYear}`;
+        }
 
         categoryTabs.forEach((tab) => {
           tab.addEventListener("click", function () {
@@ -119,6 +135,9 @@
             categoryTabs.forEach((t) => t.classList.remove("active"));
             // Add active class to clicked tab
             this.classList.add("active");
+
+            // Update display text
+            updateSelectionDisplay();
 
             // Here you would typically filter the gallery content
             const category = this.getAttribute("data-category");
@@ -132,6 +151,9 @@
             yearButtons.forEach((b) => b.classList.remove("active"));
             // Add active class to clicked button
             this.classList.add("active");
+
+            // Update display text
+            updateSelectionDisplay();
 
             // Here you would typically filter by year
             const year = this.getAttribute("data-year");
