@@ -44,12 +44,13 @@ body {
   border-radius: 50%;
 }
 
-.nav {
+/* Desktop Navigation */
+.desktop-nav {
   display: flex;
   gap: 30px;
 }
 
-.nav a {
+.desktop-nav a {
   color: white;
   text-decoration: none;
   font-weight: 400;
@@ -57,11 +58,11 @@ body {
   transition: color 0.3s ease;
 }
 
-.nav a:hover {
+.desktop-nav a:hover {
   color: #ffcc00;
 }
 
-.nav a.active {
+.desktop-nav a.active {
   color: #ffcc00;
   font-weight: bold;
   text-decoration: none;
@@ -81,6 +82,110 @@ body {
 
 .social-icon:hover {
   color: #ffcc00;
+}
+
+/* Mobile Header Right Side */
+.mobile-header-right {
+  display: none;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Hamburger Menu Button */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: #2d2d2d;
+  transition: right 0.3s ease;
+  z-index: 1000;
+  padding-top: 100px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-sidebar.open {
+  right: 0;
+}
+
+.sidebar-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 15px 0;
+  border-bottom: 1px solid #444;
+  transition: color 0.3s ease;
+}
+
+.sidebar-link:hover {
+  color: #ffcc00;
+}
+
+.sidebar-link.active {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.sidebar-overlay.open {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* Main Banner Styles */
@@ -620,16 +725,24 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .header-content {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .nav {
-    gap: 20px;
+  /* Hide desktop navigation on mobile */
+  .desktop-nav {
+    display: none;
   }
 
-  .nav a {
-    font-size: 12px;
+  /* Show mobile header right side on mobile */
+  .mobile-header-right {
+    display: flex;
+  }
+
+  /* Show hamburger menu on mobile */
+  .hamburger-menu {
+    display: flex;
   }
 
   .event-title {
