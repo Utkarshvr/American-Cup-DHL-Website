@@ -395,11 +395,11 @@ body {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .day-header {
     min-width: auto;
   }
-  
+
   .day-schedule {
     gap: 30px;
   }
@@ -409,22 +409,96 @@ body {
   .section-title {
     font-size: 2.5rem;
   }
-  
+
   .day-schedule {
     flex-direction: column;
     gap: 20px;
   }
-  
+
   .day-icon {
     width: 60px;
     height: 60px;
   }
-  
+
   .program-section {
     padding: 60px 0;
   }
 }
 
+/* Hero Section Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 70vh;
+    margin-top: 60px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    min-height: 60vh;
+    margin-top: 50px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+}
+
+/* Category Tabs Mobile Responsiveness */
+@media (max-width: 768px) {
+  .category-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tabs-row {
+    min-width: 600px;
+    padding: 0 20px;
+  }
+
+  .tab {
+    min-width: 100px;
+    min-height: 80px;
+    padding: 10px 5px;
+  }
+
+  .tab-icon img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .tab-label {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs-row {
+    min-width: 500px;
+    padding: 0 15px;
+  }
+
+  .tab {
+    min-width: 80px;
+    min-height: 70px;
+    padding: 8px 3px;
+  }
+
+  .tab-icon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .tab-label {
+    font-size: 10px;
+  }
+}
 
 /* Teams Section */
 .teams-section {
@@ -471,6 +545,54 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   text-align: left;
+}
+
+/* Teams Section Mobile Responsiveness */
+@media (max-width: 768px) {
+  .teams-section {
+    padding: 60px 0;
+  }
+
+  .teams-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .team-item img {
+    height: 180px;
+  }
+
+  .team-title {
+    font-size: 1.3rem;
+  }
+
+  .team-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .teams-section {
+    padding: 40px 0;
+  }
+
+  .teams-grid {
+    gap: 25px;
+    margin-top: 30px;
+  }
+
+  .team-item img {
+    height: 150px;
+  }
+
+  .team-title {
+    font-size: 1.2rem;
+  }
+
+  .team-description {
+    font-size: 0.9rem;
+  }
 }
 
 /* Rules Section */
@@ -544,6 +666,53 @@ body {
 
 .rule-link:hover {
   color: white;
+}
+
+/* Rules Section Mobile Responsiveness */
+@media (max-width: 768px) {
+  .rules-section {
+    padding: 60px 0;
+  }
+
+  .rules-section .section-title {
+    font-size: 2.5rem;
+  }
+
+  .rules-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .rule-title {
+    font-size: 1.3rem;
+  }
+
+  .rule-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rules-section {
+    padding: 40px 0;
+  }
+
+  .rules-section .section-title {
+    font-size: 2rem;
+  }
+
+  .rules-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .rule-title {
+    font-size: 1.2rem;
+  }
+
+  .rule-description {
+    font-size: 0.9rem;
+  }
 }
 
 /* Venue Section */
@@ -705,7 +874,7 @@ body {
 .transport-layout {
   display: flex;
   /* gap: 60px; */
-  align-items: flex-start;
+  align-items: center;
 }
 
 /* Air Option - Takes more space */
@@ -722,6 +891,7 @@ body {
   align-items: center;
   gap: 15px;
   min-width: 200px;
+  align-self: center;
 }
 
 .air-right {
@@ -753,10 +923,13 @@ body {
   align-items: center;
   gap: 10px;
   min-width: 120px;
+  align-self: center;
+
 }
 
 .transport-right {
   flex: 1;
+  align-self: center;
 }
 
 .transport-icon {
@@ -953,6 +1126,68 @@ body {
   font-weight: 400;
 }
 
+/* Catering Section Mobile Responsiveness */
+@media (max-width: 768px) {
+  .catering-section {
+    padding: 40px 0;
+  }
+
+  .catering-title {
+    font-size: 2.5rem;
+  }
+
+  .catering-description {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+
+  .catering-schedule {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .catering-block {
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .catering-heading {
+    font-size: 1.3rem;
+  }
+
+  .catering-detail {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .catering-section {
+    padding: 30px 0;
+  }
+
+  .catering-title {
+    font-size: 2rem;
+  }
+
+  .catering-description {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .catering-schedule {
+    gap: 25px;
+  }
+
+  .catering-heading {
+    font-size: 1.2rem;
+  }
+
+  .catering-detail {
+    font-size: 0.95rem;
+  }
+}
+
 /* Footer */
 .footer {
   width: 100%;
@@ -1080,6 +1315,10 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
   .header-content {
     flex-direction: column;
     gap: 20px;
@@ -1169,6 +1408,10 @@ body {
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
+
   .hero-title {
     font-size: 3rem;
   }
@@ -1206,6 +1449,36 @@ body {
   .map-image {
     height: 250px;
   }
+
+  /* Program section mobile optimizations */
+  .program-section {
+    padding: 40px 0;
+  }
+
+  .program-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .program-description {
+    font-size: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .day-title {
+    font-size: 1.1rem;
+  }
+
+  .day-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .schedule-time {
+    font-size: 0.9rem;
+  }
+
+  .schedule-desc {
+    font-size: 0.9rem;
+  }
 }
 
 /* Animation for smooth scrolling */
@@ -1231,4 +1504,29 @@ a:focus,
 button:focus {
   outline: 2px solid #ffcc00;
   outline-offset: 2px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 1px;
+  height: 1px; /* This controls horizontal scrollbar thickness */
+}
+
+::-webkit-scrollbar-track {
+  background: #2d2d2d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffcc00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d40511;
+}
+
+/* For Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ffcc00 #2d2d2d;
 }
