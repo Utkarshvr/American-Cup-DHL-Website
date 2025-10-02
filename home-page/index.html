@@ -5,67 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Americas Cup 2024 | DHL</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../components/components.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="header-content">
-        <div class="logo">
-          <img src="../assets/dhl-logo.png" alt="DHL Logo" />
-        </div>
-        
-        <!-- Desktop Navigation -->
-        <nav class="nav desktop-nav">
-          <a href="index.html" class="active">HOME</a>
-          <a href="../information-page/index.html">INFO</a>
-          <a href="../gallery-page/index.html">GALLERY</a>
-          <a href="../challenges-page/index.html">CHALLENGES</a>
-          <a href="../faqs-page/index.html">FAQS</a>
-          <a href="../contact-page/index.html">CONTACT</a>
-        </nav>
-        
-        <!-- Mobile Header Right Side -->
-        <div class="mobile-header-right">
-          <div class="social-icons">
-            <a href="#" class="social-icon">
-              <img src="../assets/icons/click-icon.svg" alt="Icon" />
-            </a>
-            <a href="#" class="social-icon">
-              <img src="../assets/icons/facebook.svg" alt="Facebook" />
-            </a>
-            <a href="#" class="social-icon">
-              <img src="../assets/icons/instagram.svg" alt="Instagram" />
-            </a>
-          </div>
-          
-          <!-- Hamburger Menu Button -->
-          <button class="hamburger-menu" id="hamburger-menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-          </button>
-        </div>
-      </div>
-      
-      <!-- Mobile Sidebar Navigation -->
-      <nav class="mobile-sidebar" id="mobile-sidebar">
-        <div class="sidebar-content">
-          <a href="index.html" class="sidebar-link active">HOME</a>
-          <a href="../information-page/index.html" class="sidebar-link">INFO</a>
-          <a href="../gallery-page/index.html" class="sidebar-link">GALLERY</a>
-          <a href="../challenges-page/index.html" class="sidebar-link">CHALLENGES</a>
-          <a href="../faqs-page/index.html" class="sidebar-link">FAQS</a>
-          <a href="../contact-page/index.html" class="sidebar-link">CONTACT</a>
-        </div>
-      </nav>
-      
-      <!-- Mobile Sidebar Overlay -->
-      <div class="sidebar-overlay" id="sidebar-overlay"></div>
-    </header>
+  <body data-page="home">
+    <!-- Header Component -->
+    <div id="header-component"></div>
 
     <!-- Main Banner -->
     <section class="main-banner">
@@ -340,50 +288,8 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <!-- Upper Footer Section -->
-      <div class="footer-upper">
-        <div class="footer-upper-content">
-          <div class="footer-event-info">
-            <p class="footer-event-text">
-              2 - 5 MAY 2024 <span style="color: white">ORLANDO, FLORIDA</span>
-            </p>
-          </div>
-          <div class="footer-social-section">
-            <div class="footer-social-icons">
-              <a href="#" class="footer-social-icon">
-                <img src="../assets/icons/click-icon.svg" alt="Click" />
-              </a>
-              <a href="#" class="footer-social-icon">
-                <img src="../assets/icons/facebook.svg" alt="Facebook" />
-              </a>
-              <a href="#" class="footer-social-icon">
-                <img src="../assets/icons/instagram.svg" alt="Instagram" />
-              </a>
-            </div>
-            <div class="footer-conversation">
-              <p class="conversation-text">JOIN THE CONVERSATION</p>
-              <p class="conversation-hashtag">#DHLAMERICASCUP</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Lower Footer Section -->
-      <div class="footer-lower">
-        <div class="footer-lower-content">
-          <div class="footer-copyright">
-            <p>Copyright © 2024 DHL Express. All Rights Reserved.</p>
-          </div>
-          <div class="footer-navigation">
-            <a href="#">Contact</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
 
     <script>
       // Countdown Timer
@@ -444,34 +350,32 @@
         if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, "0");
       }
 
-      // Hamburger Menu Toggle
-      function toggleHamburgerMenu() {
-        const hamburgerMenu = document.getElementById('hamburger-menu');
-        const mobileSidebar = document.getElementById('mobile-sidebar');
-        const sidebarOverlay = document.getElementById('sidebar-overlay');
-        
-        hamburgerMenu.classList.toggle('active');
-        mobileSidebar.classList.toggle('open');
-        sidebarOverlay.classList.toggle('open');
-        
-        // Prevent body scroll when menu is open
-        if (mobileSidebar.classList.contains('open')) {
-          document.body.style.overflow = 'hidden';
-        } else {
-          document.body.style.overflow = '';
+      // Load Components
+      async function loadComponents() {
+        try {
+          // Load header component
+          const headerResponse = await fetch('../components/header.html');
+          const headerHTML = await headerResponse.text();
+          document.getElementById('header-component').innerHTML = headerHTML;
+          
+          // Load footer component
+          const footerResponse = await fetch('../components/footer.html');
+          const footerHTML = await footerResponse.text();
+          document.getElementById('footer-component').innerHTML = footerHTML;
+          
+          // Load components JavaScript
+          const script = document.createElement('script');
+          script.src = '../components/components.js';
+          script.onload = function() {
+            // Initialize components after script is loaded
+            if (window.initializeComponentsAfterLoad) {
+              window.initializeComponentsAfterLoad();
+            }
+          };
+          document.head.appendChild(script);
+        } catch (error) {
+          console.error('Error loading components:', error);
         }
-      }
-
-      // Close mobile menu when clicking overlay
-      function closeMobileMenu() {
-        const hamburgerMenu = document.getElementById('hamburger-menu');
-        const mobileSidebar = document.getElementById('mobile-sidebar');
-        const sidebarOverlay = document.getElementById('sidebar-overlay');
-        
-        hamburgerMenu.classList.remove('active');
-        mobileSidebar.classList.remove('open');
-        sidebarOverlay.classList.remove('open');
-        document.body.style.overflow = '';
       }
 
       // Wait for DOM to be ready
@@ -480,17 +384,8 @@
         updateCountdown();
         setInterval(updateCountdown, 1000);
         
-        // Add event listeners for hamburger menu
-        const hamburgerMenu = document.getElementById('hamburger-menu');
-        const sidebarOverlay = document.getElementById('sidebar-overlay');
-        
-        if (hamburgerMenu) {
-          hamburgerMenu.addEventListener('click', toggleHamburgerMenu);
-        }
-        
-        if (sidebarOverlay) {
-          sidebarOverlay.addEventListener('click', closeMobileMenu);
-        }
+        // Load components
+        loadComponents();
       });
     </script>
   </body>

@@ -5,39 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQs | Americas Cup 2024</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../components/components.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body>
-    <!-- Header -->
-    <header class="header">
-      <div class="header-content">
-        <div class="logo">
-          <img src="../assets/dhl-logo.png" alt="DHL Logo" />
-        </div>
-        <nav class="nav">
-          <a href="../home-page/index.html">HOME</a>
-          <a href="../information-page/index.html">INFO</a>
-          <a href="../gallery-page/index.html">GALLERY</a>
-          <a href="../challenges-page/index.html">CHALLENGES</a>
-          <a href="index.html" class="active">FAQS</a>
-          <a href="../contact-page/index.html">CONTACT</a>
-        </nav>
-        <div class="social-icons">
-          <a href="#" class="social-icon">
-            <img src="../assets/icons/click-icon.svg" alt="Icon" />
-          </a>
-          <a href="#" class="social-icon">
-            <img src="../assets/icons/facebook.svg" alt="Facebook" />
-          </a>
-          <a href="#" class="social-icon">
-            <img src="../assets/icons/instagram.svg" alt="Instagram" />
-          </a>
-        </div>
-      </div>
-    </header>
+  <body data-page="faqs">
+    <!-- Header Component -->
+    <div id="header-component"></div>
 
     <!-- Hero Section -->
     <section class="hero-section"></section>
@@ -225,47 +201,8 @@
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="footer-upper">
-        <div class="footer-upper-content">
-          <div class="footer-event-info">
-            <p class="footer-event-text">
-              2 - 5 MAY 2024 <span style="color: white">ORLANDO, FLORIDA</span>
-            </p>
-          </div>
-          <div class="footer-social-section">
-            <div class="footer-social-icons">
-              <a href="#" class="footer-social-icon">
-                <img src="../assets/icons/click-icon.svg" alt="Click" />
-              </a>
-              <a href="#" class="footer-social-icon">
-                <img src="../assets/icons/facebook.svg" alt="Facebook" />
-              </a>
-              <a href="#" class="footer-social-icon">
-                <img src="../assets/icons/instagram.svg" alt="Instagram" />
-              </a>
-            </div>
-            <div class="footer-conversation">
-              <p class="conversation-text">JOIN THE CONVERSATION</p>
-              <p class="conversation-hashtag">#DHLAMERICASCUP</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-lower">
-        <div class="footer-lower-content">
-          <div class="footer-copyright">
-            <p>Copyright © 2024 DHL Express. All Rights Reserved.</p>
-          </div>
-          <div class="footer-navigation">
-            <a href="#">Contact</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-          </div>
-        </div>
-      </div>
-    </footer>
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
 
     <script>
       // Accordion interaction
@@ -293,6 +230,42 @@
       // Expand first section by default
       const firstHeader = document.querySelector(".accordion-header");
       if (firstHeader) firstHeader.click();
+    </script>
+
+    <script>
+      // Load Components
+      async function loadComponents() {
+        try {
+          // Load header component
+          const headerResponse = await fetch('../components/header.html');
+          const headerHTML = await headerResponse.text();
+          document.getElementById('header-component').innerHTML = headerHTML;
+          
+          // Load footer component
+          const footerResponse = await fetch('../components/footer.html');
+          const footerHTML = await footerResponse.text();
+          document.getElementById('footer-component').innerHTML = footerHTML;
+          
+          // Load components JavaScript
+          const script = document.createElement('script');
+          script.src = '../components/components.js';
+          script.onload = function() {
+            // Initialize components after script is loaded
+            if (window.initializeComponentsAfterLoad) {
+              window.initializeComponentsAfterLoad();
+            }
+          };
+          document.head.appendChild(script);
+        } catch (error) {
+          console.error('Error loading components:', error);
+        }
+      }
+
+      // Wait for DOM to be ready
+      document.addEventListener('DOMContentLoaded', function() {
+        // Load components
+        loadComponents();
+      });
     </script>
   </body>
 </html>
