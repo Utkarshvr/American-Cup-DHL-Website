@@ -308,19 +308,23 @@ body {
   font-weight: 900;
   color: #2d2d2d;
 }
+
 /* Interactive Grid Section */
 .interactive-grid {
   padding: 0;
-  /* background-color: #f8f9fa; */
+  background-color: #000;
+  display: flex;
+  justify-content: center;
 }
 
 .grid-container {
   width: 100%;
-  /* max-width: 1600px; */
+  max-width: 1920px;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
+  margin: 0 auto;
 }
 
 .grid-item {
@@ -332,7 +336,6 @@ body {
 }
 
 .grid-item:hover {
-  /* transform: scale(1.02); */
   z-index: 2;
 }
 
@@ -342,16 +345,11 @@ body {
 }
 
 .grid-item img {
-  /* width: 100%;
-  height: 100%; */
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  /* transition: transform 0.3s ease; */
 }
-
-/* .grid-item:hover img {
-  transform: scale(1.05);
-} */
 
 .text-overlay {
   position: absolute;
@@ -359,9 +357,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 240px;
-  /* height: 120px; */
-  /* max-width: 80%;
-  max-height: 60%; */
   object-fit: contain;
   z-index: 3;
   pointer-events: none;
@@ -427,6 +422,7 @@ body {
     transform: scale(1.01);
   }
 }
+
 
 /* Footer styles moved to components/components.css */
 
