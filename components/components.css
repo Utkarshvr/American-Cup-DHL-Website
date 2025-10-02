@@ -51,6 +51,7 @@
 
 .social-icons {
   display: flex;
+  align-items: center;
   gap: 15px;
 }
 
@@ -59,6 +60,8 @@
   font-size: 18px;
   text-decoration: none;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .social-icon:hover {
