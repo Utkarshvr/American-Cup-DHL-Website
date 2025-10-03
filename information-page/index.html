@@ -95,11 +95,15 @@
         <div class="program-schedule">
           <div class="program-day">
             <div class="day-header">
-              <div class="day-icon">
-                <img
-                  src="../assets/illustrations/information/calendar-dates/day-01.svg"
-                  alt="Day 1"
-                />
+              <div class="calendar-item">
+                <div class="calendar-icon">
+                  <img
+                    src="../assets/illustrations/calendar.svg"
+                    alt="Program Day 1"
+                  />
+                  <p class="month">Day</p>
+                  <p class="day">1</p>
+                </div>
               </div>
               <div class="day-info">
                 <h3 class="day-title">THURSDAY 2 MAY</h3>
@@ -124,11 +128,15 @@
 
           <div class="program-day">
             <div class="day-header">
-              <div class="day-icon">
-                <img
-                  src="../assets/illustrations/information/calendar-dates/day-02.svg"
-                  alt="Day 2"
-                />
+              <div class="calendar-item">
+                <div class="calendar-icon">
+                  <img
+                    src="../assets/illustrations/calendar.svg"
+                    alt="Program Day 1"
+                  />
+                  <p class="month">Day</p>
+                  <p class="day">2</p>
+                </div>
               </div>
               <div class="day-info">
                 <h3 class="day-title">FRIDAY 3 MAY</h3>
@@ -159,11 +167,15 @@
 
           <div class="program-day">
             <div class="day-header">
-              <div class="day-icon">
-                <img
-                  src="../assets/illustrations/information/calendar-dates/day-03.svg"
-                  alt="Day 3"
-                />
+              <div class="calendar-item">
+                <div class="calendar-icon">
+                  <img
+                    src="../assets/illustrations/calendar.svg"
+                    alt="Program Day 1"
+                  />
+                  <p class="month">Day</p>
+                  <p class="day">3</p>
+                </div>
               </div>
               <div class="day-info">
                 <h3 class="day-title">SATURDAY 4 MAY</h3>
@@ -194,11 +206,15 @@
 
           <div class="program-day">
             <div class="day-header">
-              <div class="day-icon">
-                <img
-                  src="../assets/illustrations/information/calendar-dates/day-04.svg"
-                  alt="Day 4"
-                />
+              <div class="calendar-item">
+                <div class="calendar-icon">
+                  <img
+                    src="../assets/illustrations/calendar.svg"
+                    alt="Program Day 1"
+                  />
+                  <p class="month">Day</p>
+                  <p class="day">4</p>
+                </div>
               </div>
               <div class="day-info">
                 <h3 class="day-title">SUNDAY 5 MAY</h3>
@@ -316,7 +332,7 @@
 
     <!-- The Venue Section -->
     <section class="venue-section">
-      <div class="container">
+      <div class="container" style="max-width: 100%; padding: 0">
         <h2 class="section-title">THE VENUE</h2>
 
         <!-- Accommodation - Image Left, Text Right -->
@@ -533,19 +549,19 @@
       async function loadComponents() {
         try {
           // Load header component
-          const headerResponse = await fetch('../components/header.html');
+          const headerResponse = await fetch("../components/header.html");
           const headerHTML = await headerResponse.text();
-          document.getElementById('header-component').innerHTML = headerHTML;
-          
+          document.getElementById("header-component").innerHTML = headerHTML;
+
           // Load footer component
-          const footerResponse = await fetch('../components/footer.html');
+          const footerResponse = await fetch("../components/footer.html");
           const footerHTML = await footerResponse.text();
-          document.getElementById('footer-component').innerHTML = footerHTML;
-          
+          document.getElementById("footer-component").innerHTML = footerHTML;
+
           // Load components JavaScript
-          const script = document.createElement('script');
-          script.src = '../components/components.js';
-          script.onload = function() {
+          const script = document.createElement("script");
+          script.src = "../components/components.js";
+          script.onload = function () {
             // Initialize components after script is loaded
             if (window.initializeComponentsAfterLoad) {
               window.initializeComponentsAfterLoad();
@@ -553,12 +569,12 @@
           };
           document.head.appendChild(script);
         } catch (error) {
-          console.error('Error loading components:', error);
+          console.error("Error loading components:", error);
         }
       }
 
       // Wait for DOM to be ready
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         // Load components
         loadComponents();
       });

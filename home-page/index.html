@@ -21,7 +21,10 @@
     </section>
 
     <!-- Countdown Timer -->
-    <section class="countdown-section" style="padding: 60px 0; background-color: #ffcc00">
+    <section
+      class="countdown-section"
+      style="padding: 60px 0; background-color: #ffcc00"
+    >
       <div class="countdown-timer">
         <div class="timer-group">
           <div class="timer-item">
@@ -128,33 +131,41 @@
               <div class="calendar-item">
                 <div class="calendar-icon">
                   <img
-                    src="../assets/illustrations/calendar-may-02.svg"
+                    src="../assets/illustrations/calendar.svg"
                     alt="Program Day 1"
                   />
+                  <p class="month">May</p>
+                  <p class="day">02</p>
                 </div>
               </div>
               <div class="calendar-item">
                 <div class="calendar-icon">
                   <img
-                    src="../assets/illustrations/calendar-may-03.svg"
+                    src="../assets/illustrations/calendar.svg"
+                    alt="Program Day 1"
+                  />
+                  <p class="month">May</p>
+                  <p class="day">03</p>
+                </div>
+              </div>
+              <div class="calendar-item">
+                <div class="calendar-icon">
+                  <img
+                    src="../assets/illustrations/calendar.svg"
                     alt="Program Day 2"
                   />
+                  <p class="month">May</p>
+                  <p class="day">04</p>
                 </div>
               </div>
               <div class="calendar-item">
                 <div class="calendar-icon">
                   <img
-                    src="../assets/illustrations/calendar-may-04.svg"
+                    src="../assets/illustrations/calendar.svg"
                     alt="Program Day 3"
                   />
-                </div>
-              </div>
-              <div class="calendar-item">
-                <div class="calendar-icon">
-                  <img
-                    src="../assets/illustrations/calendar-may-05.svg"
-                    alt="Program Day 4"
-                  />
+                  <p class="month">May</p>
+                  <p class="day">05</p>
                 </div>
               </div>
             </div>
@@ -311,13 +322,13 @@
         const hoursEl = document.getElementById("hours");
         const minutesEl = document.getElementById("minutes");
         const secondsEl = document.getElementById("seconds");
-        
+
         console.log("Elements found:", {
           weeks: !!weeksEl,
           days: !!daysEl,
           hours: !!hoursEl,
           minutes: !!minutesEl,
-          seconds: !!secondsEl
+          seconds: !!secondsEl,
         });
 
         // If the event has passed, show zeros
@@ -341,32 +352,40 @@
         const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        console.log("Calculated values:", { weeks, days, hours, minutes, seconds });
+        console.log("Calculated values:", {
+          weeks,
+          days,
+          hours,
+          minutes,
+          seconds,
+        });
 
         if (weeksEl) weeksEl.textContent = weeks.toString().padStart(2, "0");
         if (daysEl) daysEl.textContent = days.toString().padStart(2, "0");
         if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, "0");
-        if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, "0");
-        if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, "0");
+        if (minutesEl)
+          minutesEl.textContent = minutes.toString().padStart(2, "0");
+        if (secondsEl)
+          secondsEl.textContent = seconds.toString().padStart(2, "0");
       }
 
       // Load Components
       async function loadComponents() {
         try {
           // Load header component
-          const headerResponse = await fetch('../components/header.html');
+          const headerResponse = await fetch("../components/header.html");
           const headerHTML = await headerResponse.text();
-          document.getElementById('header-component').innerHTML = headerHTML;
-          
+          document.getElementById("header-component").innerHTML = headerHTML;
+
           // Load footer component
-          const footerResponse = await fetch('../components/footer.html');
+          const footerResponse = await fetch("../components/footer.html");
           const footerHTML = await footerResponse.text();
-          document.getElementById('footer-component').innerHTML = footerHTML;
-          
+          document.getElementById("footer-component").innerHTML = footerHTML;
+
           // Load components JavaScript
-          const script = document.createElement('script');
-          script.src = '../components/components.js';
-          script.onload = function() {
+          const script = document.createElement("script");
+          script.src = "../components/components.js";
+          script.onload = function () {
             // Initialize components after script is loaded
             if (window.initializeComponentsAfterLoad) {
               window.initializeComponentsAfterLoad();
@@ -374,16 +393,16 @@
           };
           document.head.appendChild(script);
         } catch (error) {
-          console.error('Error loading components:', error);
+          console.error("Error loading components:", error);
         }
       }
 
       // Wait for DOM to be ready
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         console.log("DOM loaded, starting countdown");
         updateCountdown();
         setInterval(updateCountdown, 1000);
-        
+
         // Load components
         loadComponents();
       });
