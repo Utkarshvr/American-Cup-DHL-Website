@@ -412,10 +412,14 @@ body {
 }
 
 /* Responsive Design for Interactive Grid */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .grid-container {
     grid-template-columns: 1fr;
-    padding: 0 10px;
+    padding: 0;
+  }
+
+  .grid-item-text {
+    font-size: 3rem;
   }
 
   .main-item {
@@ -424,35 +428,12 @@ body {
   }
 
   .grid-item {
-    aspect-ratio: 4/3;
+    aspect-ratio: 16/9;
   }
 
   .text-overlay {
     max-width: 70%;
     max-height: 50%;
-  }
-}
-
-@media (max-width: 480px) {
-  .grid-container {
-    padding: 0 5px;
-  }
-
-  .main-item {
-    aspect-ratio: 3/2;
-  }
-
-  .grid-item {
-    aspect-ratio: 1;
-  }
-
-  .text-overlay {
-    max-width: 60%;
-    max-height: 40%;
-  }
-
-  .grid-item:hover {
-    transform: scale(1.01);
   }
 }
 
@@ -508,10 +489,6 @@ body {
   .calendar-grid {
     grid-template-columns: 1fr 1fr;
   }
-
-  .grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
 }
 
 @media (max-width: 480px) {
@@ -550,10 +527,6 @@ body {
   }
 
   .calendar-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .grid-container {
     grid-template-columns: 1fr;
   }
 }
