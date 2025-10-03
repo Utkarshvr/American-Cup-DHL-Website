@@ -333,7 +333,7 @@ body {
 
 .grid-container {
   width: 100%;
-  max-width: 1920px;
+  /* max-width: 1920px; */
   padding: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -366,7 +366,7 @@ body {
 }
 
 .grid-item-text {
-  font-size: 6rem;
+  font-size: 4.5rem;
   font-weight: 900;
   color: #fff;
   text-transform: uppercase;
@@ -412,14 +412,14 @@ body {
 }
 
 /* Responsive Design for Interactive Grid */
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .grid-container {
     grid-template-columns: 1fr;
     padding: 0;
   }
 
   .grid-item-text {
-    font-size: 3rem;
+    /* font-size: 3rem; */
   }
 
   .main-item {
@@ -442,6 +442,9 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .event-title {
+    font-size: 3rem;
+  }
+  .grid-item-text {
     font-size: 3rem;
   }
 
@@ -491,11 +494,13 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .event-title {
     font-size: 2.5rem;
   }
-
+  .grid-item-text {
+    font-size: 2rem;
+  }
   .section-title {
     font-size: 2rem;
   }
