@@ -5,7 +5,422 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Americas Cup 2024 | DHL</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="../components/components.css" />
+    <style>
+      /* Shared Components CSS */
+
+      /* Header Styles */
+      .header {
+        background-color: #2d2d2d;
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-content {
+        /* max-width: 1200px; */
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      /* Header Left Side: Logo */
+      .header-left {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Header Right Side: Social Icons and Mobile Menu */
+      .header-right {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .logo img {
+        width: 80px;
+        border-radius: 50%;
+      }
+
+      /* Desktop Navigation */
+      .desktop-nav {
+        display: flex;
+        gap: 30px;
+      }
+
+      .desktop-nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 14px;
+        transition: color 0.3s ease;
+      }
+
+      .desktop-nav a:hover {
+        color: #ffcc00;
+      }
+
+      .desktop-nav a.active {
+        color: #ffcc00;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      .social-icons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .social-icon {
+        color: white;
+        font-size: 18px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        display: flex;
+        align-items: center;
+      }
+
+      .social-icon:hover {
+        color: #ffcc00;
+      }
+
+      /* Mobile Header Right Side */
+      .mobile-header-right {
+        display: none;
+        align-items: center;
+      }
+
+      /* Hamburger Menu Button */
+      .hamburger-menu {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 30px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+      }
+
+      .hamburger-line {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+        transition: all 0.3s ease;
+        transform-origin: center;
+      }
+
+      .hamburger-menu.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .hamburger-menu.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger-menu.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Mobile Sidebar */
+      .mobile-sidebar {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: #2d2d2d;
+        transition: right 0.3s ease;
+        z-index: 1000;
+        padding-top: 100px;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .mobile-sidebar.open {
+        right: 0;
+      }
+
+      .sidebar-content {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .sidebar-link {
+        color: white;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 18px;
+        padding: 15px 0;
+        border-bottom: 1px solid #444;
+        transition: color 0.3s ease;
+      }
+
+      .sidebar-link:hover {
+        color: #ffcc00;
+      }
+
+      .sidebar-link.active {
+        color: #ffcc00;
+        font-weight: bold;
+      }
+
+      /* Sidebar Overlay */
+      .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .sidebar-overlay.open {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* Footer Styles */
+      .footer {
+        width: 100%;
+      }
+
+      /* Upper Footer Section - Dark Gray Background */
+      .footer-upper {
+        background-color: #2d2d2d;
+        padding: 30px 0;
+      }
+
+      .footer-upper-content {
+        /* max-width: 1200px; */
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-event-info {
+        display: flex;
+        align-items: center;
+      }
+
+      .footer-event-text {
+        font-size: 2rem;
+        font-weight: 900;
+        color: #ffcc00;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .footer-social-section {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .footer-social-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .footer-social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        transition: transform 0.3s ease;
+      }
+
+      .footer-social-icon:hover {
+        transform: scale(1.1);
+      }
+
+      .footer-social-icon img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .footer-conversation {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .conversation-text {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: white;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .conversation-hashtag {
+        font-size: 1.1rem;
+        font-weight: 900;
+        color: #ffcc00;
+        margin: 0;
+        letter-spacing: 0.5px;
+      }
+
+      /* Lower Footer Section - Yellow Background */
+      .footer-lower {
+        background-color: #ffcc00;
+        padding: 20px 0;
+      }
+
+      .footer-lower-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .footer-copyright p {
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: #2d2d2d;
+        margin: 0;
+      }
+
+      .footer-navigation {
+        display: flex;
+        gap: 20px;
+      }
+
+      .footer-navigation a {
+        color: #2d2d2d;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: color 0.3s ease;
+      }
+
+      .footer-navigation a:hover {
+        color: #d40511;
+      }
+
+      /* Responsive Design for Components */
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        /* Header right side on mobile */
+        .header-right {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+        }
+
+        /* Social icons on mobile */
+        .social-icons {
+          display: flex;
+          gap: 10px;
+        }
+
+        .social-icon img {
+          width: 24px;
+          height: 24px;
+        }
+
+        /* Hide desktop navigation on mobile */
+        .desktop-nav {
+          display: none;
+        }
+
+        /* Show mobile header right side on mobile */
+        .mobile-header-right {
+          display: flex;
+        }
+
+        /* Show hamburger menu on mobile */
+        .hamburger-menu {
+          display: flex;
+        }
+
+        .footer-upper-content {
+          flex-direction: column;
+          gap: 20px;
+          text-align: center;
+        }
+
+        .footer-social-section {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .footer-lower-content {
+          flex-direction: column;
+          gap: 15px;
+          text-align: center;
+        }
+      }
+
+      /* Additional responsive styles for smaller screens */
+      @media (max-width: 480px) {
+        .header-right {
+          gap: 10px;
+        }
+
+        .social-icons {
+          gap: 8px;
+        }
+
+        /* .social-icon img {
+          width: 18px;
+          height: 18px;
+        } */
+
+        .logo img {
+          width: 60px;
+        }
+      }
+
+      /* Animation for smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Loading animation for images */
+      img {
+        transition: opacity 0.3s ease;
+      }
+
+      /* Hover effects for interactive elements */
+      a,
+      button,
+      .grid-item,
+      .calendar-item {
+        transition: all 0.3s ease;
+      }
+
+      /* Focus styles for accessibility */
+      a:focus,
+      button:focus {
+        outline: 2px solid #ffcc00;
+        outline-offset: 2px;
+      }
+    </style>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap"
       rel="stylesheet"
@@ -13,7 +428,66 @@
   </head>
   <body data-page="home">
     <!-- Header Component -->
-    <div id="header-component"></div>
+    <header class="header">
+      <div class="header-content">
+        <!-- Left Side: Logo -->
+        <div class="header-left">
+          <div class="logo">
+            <img src="../assets/dhl-logo.png" alt="DHL Logo" />
+          </div>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <nav class="nav desktop-nav">
+          <a href="../home-page/index.html" class="nav-link" data-page="home">HOME</a>
+          <a href="../information-page/index.html" class="nav-link" data-page="info">INFO</a>
+          <a href="../gallery-page/index.html" class="nav-link" data-page="gallery">GALLERY</a>
+          <a href="../challenges-page/index.html" class="nav-link" data-page="challenges">CHALLENGES</a>
+          <a href="../faqs-page/index.html" class="nav-link" data-page="faqs">FAQS</a>
+          <a href="../contact-page/index.html" class="nav-link" data-page="contact">CONTACT</a>
+        </nav>
+        
+        <!-- Right Side: Social Icons and Mobile Menu -->
+        <div class="header-right">
+          <div class="social-icons">
+            <a href="#" class="social-icon">
+              <img src="../assets/icons/click-icon.svg" alt="Icon" />
+            </a>
+            <a href="#" class="social-icon">
+              <img src="../assets/icons/facebook.svg" alt="Facebook" />
+            </a>
+            <a href="#" class="social-icon">
+              <img src="../assets/icons/instagram.svg" alt="Instagram" />
+            </a>
+          </div>
+          
+          <!-- Mobile Header Right Side -->
+          <div class="mobile-header-right">
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu" id="hamburger-menu">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mobile Sidebar Navigation -->
+      <nav class="mobile-sidebar" id="mobile-sidebar">
+        <div class="sidebar-content">
+          <a href="../home-page/index.html" class="sidebar-link" data-page="home">HOME</a>
+          <a href="../information-page/index.html" class="sidebar-link" data-page="info">INFO</a>
+          <a href="../gallery-page/index.html" class="sidebar-link" data-page="gallery">GALLERY</a>
+          <a href="../challenges-page/index.html" class="sidebar-link" data-page="challenges">CHALLENGES</a>
+          <a href="../faqs-page/index.html" class="sidebar-link" data-page="faqs">FAQS</a>
+          <a href="../contact-page/index.html" class="sidebar-link" data-page="contact">CONTACT</a>
+        </div>
+      </nav>
+      
+      <!-- Mobile Sidebar Overlay -->
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
+    </header>
 
     <!-- Main Banner -->
     <section class="main-banner">
@@ -256,7 +730,49 @@
     </section>
 
     <!-- Footer Component -->
-    <div id="footer-component"></div>
+    <footer class="footer">
+      <!-- Upper Footer Section -->
+      <div class="footer-upper">
+        <div class="footer-upper-content">
+          <div class="footer-event-info">
+            <p class="footer-event-text">
+              2 - 5 MAY 2024 <span style="color: white">ORLANDO, FLORIDA</span>
+            </p>
+          </div>
+          <div class="footer-social-section">
+            <div class="footer-social-icons">
+              <a href="#" class="footer-social-icon">
+                <img src="../assets/icons/click-icon.svg" alt="Click" />
+              </a>
+              <a href="#" class="footer-social-icon">
+                <img src="../assets/icons/facebook.svg" alt="Facebook" />
+              </a>
+              <a href="#" class="footer-social-icon">
+                <img src="../assets/icons/instagram.svg" alt="Instagram" />
+              </a>
+            </div>
+            <div class="footer-conversation">
+              <p class="conversation-text">JOIN THE CONVERSATION</p>
+              <p class="conversation-hashtag">#DHLAMERICASCUP</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lower Footer Section -->
+      <div class="footer-lower">
+        <div class="footer-lower-content">
+          <div class="footer-copyright">
+            <p>Copyright © 2024 DHL Express. All Rights Reserved.</p>
+          </div>
+          <div class="footer-navigation">
+            <a href="../contact-page/index.html">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script>
       // Countdown Timer
@@ -325,43 +841,96 @@
           secondsEl.textContent = seconds.toString().padStart(2, "0");
       }
 
-      // Load Components
-      async function loadComponents() {
-        try {
-          // Load header component
-          const headerResponse = await fetch("../components/header.html");
-          const headerHTML = await headerResponse.text();
-          document.getElementById("header-component").innerHTML = headerHTML;
-
-          // Load footer component
-          const footerResponse = await fetch("../components/footer.html");
-          const footerHTML = await footerResponse.text();
-          document.getElementById("footer-component").innerHTML = footerHTML;
-
-          // Load components JavaScript
-          const script = document.createElement("script");
-          script.src = "../components/components.js";
-          script.onload = function () {
-            // Initialize components after script is loaded
-            if (window.initializeComponentsAfterLoad) {
-              window.initializeComponentsAfterLoad();
-            }
-          };
-          document.head.appendChild(script);
-        } catch (error) {
-          console.error("Error loading components:", error);
-        }
-      }
-
       // Wait for DOM to be ready
       document.addEventListener("DOMContentLoaded", function () {
         console.log("DOM loaded, starting countdown");
         updateCountdown();
         setInterval(updateCountdown, 1000);
-
-        // Load components
-        loadComponents();
+        
+        // Initialize components
+        initializeComponents();
       });
+    </script>
+    <script>
+      // Shared Components JavaScript
+
+      // Hamburger Menu Toggle
+      function toggleHamburgerMenu() {
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const mobileSidebar = document.getElementById('mobile-sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        
+        if (hamburgerMenu && mobileSidebar && sidebarOverlay) {
+          hamburgerMenu.classList.toggle('active');
+          mobileSidebar.classList.toggle('open');
+          sidebarOverlay.classList.toggle('open');
+          
+          // Prevent body scroll when menu is open
+          if (mobileSidebar.classList.contains('open')) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = '';
+          }
+        }
+      }
+
+      // Close mobile menu when clicking overlay
+      function closeMobileMenu() {
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const mobileSidebar = document.getElementById('mobile-sidebar');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        
+        if (hamburgerMenu && mobileSidebar && sidebarOverlay) {
+          hamburgerMenu.classList.remove('active');
+          mobileSidebar.classList.remove('open');
+          sidebarOverlay.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      }
+
+      // Set active navigation link based on current page
+      function setActiveNavLink() {
+        const currentPage = document.body.getAttribute('data-page');
+        const navLinks = document.querySelectorAll('.nav-link, .sidebar-link');
+        
+        navLinks.forEach(link => {
+          const linkPage = link.getAttribute('data-page');
+          if (linkPage === currentPage) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+
+      // Initialize components when DOM is ready
+      function initializeComponents() {
+        // Add event listeners for hamburger menu
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const sidebarOverlay = document.getElementById('sidebar-overlay');
+        
+        if (hamburgerMenu) {
+          hamburgerMenu.addEventListener('click', toggleHamburgerMenu);
+        }
+        
+        if (sidebarOverlay) {
+          sidebarOverlay.addEventListener('click', closeMobileMenu);
+        }
+        
+        // Set active navigation link
+        setActiveNavLink();
+      }
+
+      // Initialize components after they are loaded
+      function initializeComponentsAfterLoad() {
+        // Use a small delay to ensure DOM is updated
+        setTimeout(() => {
+          initializeComponents();
+        }, 100);
+      }
+
+      // Export the initialization function for use in pages
+      window.initializeComponentsAfterLoad = initializeComponentsAfterLoad;
     </script>
   </body>
 </html>
